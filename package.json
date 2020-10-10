@@ -1,0 +1,31 @@
+{
+  "name": "jsbigprogect",
+  "version": "1.0.0",
+  "description": "pure js exel app",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bananosplit/JsBigProgect.git"
+  },
+  "keywords": [
+    "js",
+    "exel",
+    "nodeJS"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bananosplit/JsBigProgect/issues"
+  },
+  "homepage": "https://github.com/Bananosplit/JsBigProgect#readme",
+  "private": "true",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
