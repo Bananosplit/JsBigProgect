@@ -1,6 +1,6 @@
 console.log('test work import');
 async function start() {
-    await Promise.resolve()
+    await Promise.resolve('Async working').then(console.log)
 }
 
 start()
