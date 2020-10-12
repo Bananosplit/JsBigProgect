@@ -7,12 +7,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
 
+const filename = ext => isDev ? `bundle.${ext}`: `bundle.[hash].${ext}`
+
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: './index.js',
     output: {
-        filename: 'bundle.[hash].js',
+        filename: filename('js'),
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
@@ -25,7 +27,11 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HTMLWebpackPlugin({
-            template: 'index.html'
+            template: 'index.html',
+            minify: { 
+                removeComments: isProd,
+                collapseWhitespace: isProd
+            }
         }),
         new CopyPlugin({
 
@@ -37,7 +43,7 @@ module.exports = {
             ]
         }),
         new MiniCssExtractPlugin({
-            filename: 'bundle.[hash].css'
+            filename: filename('css'),
         })
     ],
     module: {
