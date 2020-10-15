@@ -20,7 +20,7 @@ class Dom {
     }
 
     on(eventType, callback) {
-        this.$el.addEventListener(eventType, callback)
+        this.$el.addEventListener(eventType, callback) 
     }
 
     of(eventType, callback){
