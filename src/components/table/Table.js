@@ -1,12 +1,24 @@
-import { createTable } from "./table.template";
+import { createTable } from "./table.template"
+import { ExelComponent } from "../../core/ExelComponent"
+import { resizeHandler } from './table.resize'
+import { shouldResize } from './table.functions'
 
-const { ExelComponent } = require("../../core/ExelComponent");
 
-export class Table extends ExelComponent{
-
+export class Table extends ExelComponent {
     static ClassName = 'excel__table'
-    toHTML(){
+    constructor($root) {
+        super($root, {
+            listeners: ['mousedown']
+        })
+    }
+    toHTML() {
         return createTable(50)
+    }
+
+    onMousedown(event) {
+        if (shouldResize(event)) {
+            resizeHandler(this.$root, event)
+        }
     }
 
 }
