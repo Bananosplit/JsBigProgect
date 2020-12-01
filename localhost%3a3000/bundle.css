@@ -466,6 +466,7 @@ template {
   display: flex;
   flex-direction: row;
   min-height: 24px;
+  width: 42px;
 }
 .excel__table .row-info {
   display: flex;
@@ -528,9 +529,10 @@ template {
   top: 0;
   /* bottom: 0; */
   right: 0;
-  width: 4px;
+  width: 39px;
   background: #3c74ff;
-  opacity: 0;
+  height: 4px;
+  /* opacity: 0; */
 }
 .excel__table .row-resize:hover {
   opacity: 1;
